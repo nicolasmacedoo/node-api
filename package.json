@@ -2,19 +2,26 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "module": "module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch src/server.ts"
+    "dev": "node --env-file .env --watch src/server.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.3",
     "drizzle-orm": "^0.44.4",
     "fastify": "^5.5.0",
+    "fastify-type-provider-zod": "^5.0.3",
     "pg": "^8.16.3",
-    "pino-pretty": "^13.1.1"
+    "pino-pretty": "^13.1.1",
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "@types/node": "^24.2.1",
