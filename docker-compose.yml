@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: desafio_db
     image: postgres:17
     environment:
       POSTGRES_USER: docker
